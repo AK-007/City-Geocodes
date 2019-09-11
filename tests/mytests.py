@@ -47,7 +47,7 @@ class GeocodeUnitTest(unittest.TestCase):
         self.assertEqual(resp.json['error'], "Method not allowed")
 
     def test_undefined_route(self):
-        resp = self.__client.post(path='/location')
+        resp = self.__client.get(path='/location')
 
         # The request should return 404 as no such endpoint defined in the REST API
         self.assertEqual(resp.status_code, 404)
